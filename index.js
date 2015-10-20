@@ -13,11 +13,11 @@ var count = 0;
 app.post('/payload', function(req, res) {
     console.log("JUST TESTING SHIT")
     latestBody = req.body;
+    count++;
 });
 
 app.get('/github', function(req, res) {
     console.log("CURRENT COUZNT IS ", count);
-    count++;
     res.send("HEY" + latestBody);
 });
 
