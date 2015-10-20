@@ -8,13 +8,16 @@ var bodyParser = require('body-parser')
 app.use( bodyParser.json() ); 
 
 var latestBody = null;
+var count = 0;
 
 app.post('/payload', function(req, res) {
-    console.log(req.body)
+    console.log("JUST TESTING SHIT")
     latestBody = req.body;
 });
 
 app.get('/github', function(req, res) {
+    console.log("CURRENT COUZNT IS ", count);
+    count++;
     res.send(latestBody);
 });
 
