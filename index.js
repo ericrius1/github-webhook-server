@@ -18,7 +18,7 @@ app.post('/payload', function(req, res) {
 app.get('/github', function(req, res) {
     console.log("CURRENT COUZNT IS ", count);
     count++;
-    res.send(latestBody);
+    res.send("HEY" + latestBody);
 });
 
 app.listen(app.get('port'), function() {
