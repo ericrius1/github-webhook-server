@@ -1,4 +1,5 @@
 var express = require("express")
+var shortid = require('shortid');
 
 var app = express()
 
@@ -8,16 +9,13 @@ var bodyParser = require('body-parser')
 app.use( bodyParser.json() ); 
 
 var latestBody = null;
-var count = 0;
 
 app.post('/payload', function(req, res) {
-    console.log("JUST TESTING SHIT")
     latestBody = req.body;
-    count++;
+    latestBody.id = shortid.generate()
 });
 
 app.get('/github', function(req, res) {
-    console.log("CURRENT COUZNT IS ", count);
     res.send(latestBody);
 });
 
