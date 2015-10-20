@@ -1,6 +1,10 @@
 {
   "name": "github-webhook-server",
   "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3"

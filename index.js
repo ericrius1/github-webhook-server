@@ -2,6 +2,8 @@ var express = require("express")
 
 var app = express()
 
+app.set('port', (process.env.PORT || 5000));
+
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() ); 
 
@@ -16,6 +18,6 @@ app.get('/github', function(req, res) {
     res.send(latestBody);
 });
 
-var server = app.listen(4567, function() {
-    console.log("listeing at 4567!");
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
